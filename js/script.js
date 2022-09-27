@@ -1,11 +1,18 @@
-let budget = 100;
+let budget = Number(prompt("Inserisci il tuo budget iniziale:"));
+document.querySelector("#show-budget").innerHTML = `<div>${budget}</div>`;
 // document.querySelector("#show-budget").innerHTML = `${budget}`;
 let halfBudget = budget / 2;
 
-for (let i = budget; i > 0; i--) {
+function decrementBudget() {
 	if (budget === halfBudget) {
 		alert("Sei arrivato a metá budget!");
 	}
-	document.getElementById("show-budget").innerHTML = `<p>${i}</p>`;
+
+	if (budget === 0) {
+		alert("Budget Esaurito");
+	}
+
 	budget--;
+
+	document.querySelector("#show-budget").innerHTML = `<div>${budget}</div>`;
 }
