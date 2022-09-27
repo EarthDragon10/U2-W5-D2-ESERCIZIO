@@ -12,6 +12,10 @@ function decrementBudget() {
 		alert("Budget Esaurito");
 	}
 
+	if (budget <= 0) {
+		return;
+	}
+
 	budget--;
 
 	document.querySelector("#show-budget").innerHTML = `<div>${budget}</div>`;
